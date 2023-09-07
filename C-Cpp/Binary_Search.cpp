@@ -2,22 +2,42 @@
 
 using namespace std;
 
+void binary_search(int [], int, int);
+
 int main() 
 {
-    int arrayOfNumbers[5] = {1, 9, 5, 7, 9};
+    int arrayOfNumbers[5] = {1, 3, 5, 7, 9};
     int numberForSearch;
-    bool found = false;
-    
     cin >> numberForSearch;
+    binary_search(arrayOfNumbers, 5, numberForSearch);
+}
 
-    for(int i = 0; i < 5; i++)
+void binary_search(int arr[], int size, int target)
+{
+    int low = 0, high = size - 1;
+    int mid = (high + low) / 2;
+    
+    while(low <= high)
     {
-      if (numberForSearch == arrayOfNumbers[i]) 
+        if(target > arr[mid])
         {
-            cout << "Found in position: " << i << endl;
-            found = true;
+            low = mid + 1;
+            mid = (high + low) / 2;
+        }
+        else if(target < arr[mid]) 
+        {
+            high = mid - 1;
+            mid = (high + low) / 2;
+        }
+        else 
+        {
+            cout << "Found in: " << mid << endl;
+            break;    
         }
     }
-
-    if (!found) cout << "number not found!";
+    
+    if(low > high)
+    {
+        cout << -1;
+    }
 }
