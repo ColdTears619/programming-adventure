@@ -18,6 +18,6 @@ func main() {
             if (i != j && i + 1 != j + 1) && ((array[i] + array[i+1]) + array[j] == 0) && (i + 1 < len(array)) {
                 fmt.Println(array[i], array[i + 1], array[j])
             }
-        } 
+        }
     }
 }
