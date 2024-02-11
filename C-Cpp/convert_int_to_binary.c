@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
     int i = 0;
     for(i = 0; i < count; i++)
     {
-        if(binary[i] == 1)\ 
+        if(binary[i] == 1)
         {
             ++nubmerofbitsequalto1;
             //printf("%d", nubmerofbitsequalto1);
